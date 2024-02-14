@@ -20,7 +20,7 @@ public class BarcodeRoute: RouteProtocol {
         
         public struct ScannedRequestBody: Codable {
             public let barcodeNummer: String
-            public let angebot: Angebot
+            public let angebot: Angebot?
             
             public init(barcodeNummer: String, angebot: Angebot) {
                 self.barcodeNummer = barcodeNummer

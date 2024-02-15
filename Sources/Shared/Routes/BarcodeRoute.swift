@@ -22,7 +22,7 @@ public class BarcodeRoute: RouteProtocol {
             public let barcodeNummer: String
             public let angebot: Angebot?
             
-            public init(barcodeNummer: String, angebot: Angebot) {
+            public init(barcodeNummer: String, angebot: Angebot?) {
                 self.barcodeNummer = barcodeNummer
                 self.angebot = angebot
             }

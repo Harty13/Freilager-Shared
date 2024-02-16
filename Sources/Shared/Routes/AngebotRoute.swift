@@ -41,11 +41,13 @@ public class AngebotRoute: RouteProtocol {
             public var id: UUID
             public let titel: String?
             public let beschreibung: String?
+            public let maxPersonenAnzahl: Int?
             
-            public init(id: UUID, titel: String? = nil, beschreibung: String? = nil) {
+            public init(id: UUID, titel: String? = nil, beschreibung: String? = nil, maxPersonenAnzahl: Int? = nil) {
                 self.id = id
                 self.titel = titel
                 self.beschreibung = beschreibung
+                self.maxPersonenAnzahl = maxPersonenAnzahl
             }
         }
         

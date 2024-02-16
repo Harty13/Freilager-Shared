@@ -14,7 +14,7 @@ public class BarcodeRoute: RouteProtocol {
 
     public struct ScannedRequest: RequestProtocol {
         public typealias RequestBody = ScannedRequestBody
-        public typealias ResponseBody = Person
+        public typealias ResponseBody = ScannedResponseBody
         public let method = HTTPMethod.post
         public let path = "scanned"
         

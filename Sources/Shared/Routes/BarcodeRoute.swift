@@ -28,6 +28,22 @@ public class BarcodeRoute: RouteProtocol {
             }
         }
         
+        public struct ScannedResponseBody: Codable {
+            public let person: Person
+            public let action: Action?
+            
+            public init(person: Person, action: Action?) {
+                self.person = person
+                self.action = action
+            }
+            
+            public enum Action: Codable {
+                case login
+                case checkIn
+                case checkOut
+            }
+        }
+        
         public init() {}
     }
 }

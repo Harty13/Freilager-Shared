@@ -29,10 +29,12 @@ public class AuthRoute: RouteProtocol {
         }
         
         public struct LoginResponseBody: Codable {
-            public let token: String
+            public let token: UUID
+            public let person: Person
             
-            public init(token: String) {
+            public init(token: UUID, person: Person) {
                 self.token = token
+                self.person = person
             }
         }
         

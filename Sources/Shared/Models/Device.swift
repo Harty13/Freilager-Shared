@@ -14,5 +14,14 @@ public struct Device: Identifiable, Codable {
     public var modus: DeviceModus?
     public var deviceStatus: DeviceStatus?
     public var kommentar: String?
+    
+    public init(id: UUID?, deviceType: DeviceType?, uniqueIdentifier: UUID?, modus: DeviceModus?, deviceStatus: DeviceStatus?, kommentar: String?) {
+        self.id = id
+        self.deviceType = deviceType
+        self.uniqueIdentifier = uniqueIdentifier
+        self.modus = modus
+        self.deviceStatus = deviceStatus
+        self.kommentar = kommentar
+    }
 }
 

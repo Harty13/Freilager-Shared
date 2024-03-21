@@ -40,11 +40,11 @@ public class DeviceRoute: RouteProtocol {
         public let path = "update"
         
         public struct UpdateRequestBody: Codable {
-            public var uniqueIdentifier: UUID
+            public var id: UUID
             public var kommentar: String?
             
-            public init(uniqueIdentifier: UUID, kommentar: String?) {
-                self.uniqueIdentifier = uniqueIdentifier
+            public init(id: UUID, kommentar: String?) {
+                self.id = id
                 self.kommentar = kommentar
             }
         }

@@ -25,14 +25,16 @@ public class PersonRoute: RouteProtocol {
             public let klasse: String?
             public let passwordHash: String
             public let rechte: [Rechte]?
+            public let barcodeNummer: String
             
-            public init(vorname: String, nachname: String, rolle: Rolle, klasse: String?, passwordHash: String, rechte: [Rechte]?) {
+            public init(vorname: String, nachname: String, rolle: Rolle, klasse: String?, passwordHash: String, rechte: [Rechte]?, barcodeNummer: String) {
                 self.vorname = vorname
                 self.nachname = nachname
                 self.rolle = rolle
                 self.klasse = klasse
                 self.passwordHash = passwordHash
                 self.rechte = rechte
+                self.barcodeNummer = barcodeNummer
             }
         }
         

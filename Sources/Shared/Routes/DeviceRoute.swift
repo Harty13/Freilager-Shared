@@ -59,10 +59,10 @@ public class DeviceRoute: RouteProtocol {
         public let path = "delete"
         
         public struct DeleteRequestBody: Codable {
-            public var uniqueIdentifier: UUID
+            public var id: UUID
             
-            public init(uniqueIdentifier: UUID) {
-                self.uniqueIdentifier = uniqueIdentifier
+            public init(id: UUID) {
+                self.id = id
             }
         }
         

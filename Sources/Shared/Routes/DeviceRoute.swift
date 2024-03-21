@@ -33,6 +33,25 @@ public class DeviceRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct UpdateRequest: RequestProtocol {
+        public typealias RequestBody = UpdateRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "update"
+        
+        public struct UpdateRequestBody: Codable {
+            public var uniqueIdentifier: UUID
+            public var kommentar: String?
+            
+            public init(uniqueIdentifier: UUID, kommentar: String?) {
+                self.uniqueIdentifier = uniqueIdentifier
+                self.kommentar = kommentar
+            }
+        }
+        
+        public init() {}
+    }
+    
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
         public typealias ResponseBody = HTTPStatus

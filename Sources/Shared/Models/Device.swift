@@ -9,17 +9,20 @@ import Foundation
 
 public struct Device: Identifiable, Codable {
     public var id: UUID?
-    public var deviceType: DeviceType?
     public var uniqueIdentifier: UUID?
+    public var deviceType: DeviceType?
     public var modus: DeviceModus?
+    public var owner: Person?
+    public var currentAngebot: Angebot?
     public var deviceStatus: DeviceStatus?
     public var kommentar: String?
     
-    public init(id: UUID?, deviceType: DeviceType?, uniqueIdentifier: UUID?, modus: DeviceModus?, deviceStatus: DeviceStatus?, kommentar: String?) {
+    public init(id: UUID? = nil, uniqueIdentifier: UUID? = nil, deviceType: DeviceType? = nil, modus: DeviceModus? = nil, owner: Person? = nil, deviceStatus: DeviceStatus? = nil, kommentar: String? = nil) {
         self.id = id
-        self.deviceType = deviceType
         self.uniqueIdentifier = uniqueIdentifier
+        self.deviceType = deviceType
         self.modus = modus
+        self.owner = owner
         self.deviceStatus = deviceStatus
         self.kommentar = kommentar
     }

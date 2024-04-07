@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum DeviceModus: Codable {
-    case info
-    case angebot(currentAngebot: Angebot?)
-    case person(person: Person)
+public enum DeviceModus: String, Codable {
+    case info = "info"
+    case angebot = "angebot"
+    case person = ""
 }

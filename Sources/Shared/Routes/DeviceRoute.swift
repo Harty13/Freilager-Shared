@@ -19,14 +19,18 @@ public class DeviceRoute: RouteProtocol {
         public let path = "create"
         
         public struct CreateRequestBody: Codable {
-            public var deviceType: DeviceType?
             public var uniqueIdentifier: UUID?
-            public var modus: DeviceModus?
+            public var deviceType: DeviceType?
+            public var deviceModus: DeviceModus?
+            public var owner: Person?
+            public var kommentar: String?
             
-            public init(deviceType: DeviceType, uniqueIdentifier: UUID, modus: DeviceModus) {
-                self.deviceType = deviceType
+            public init(uniqueIdentifier: UUID? = nil, deviceType: DeviceType? = nil, deviceModus: DeviceModus? = nil, owner: Person? = nil, kommentar: String? = nil) {
                 self.uniqueIdentifier = uniqueIdentifier
-                self.modus = modus
+                self.deviceType = deviceType
+                self.deviceModus = deviceModus
+                self.owner = owner
+                self.kommentar = kommentar
             }
         }
         

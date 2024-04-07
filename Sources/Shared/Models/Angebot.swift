@@ -17,7 +17,15 @@ public struct Angebot: Identifiable, Codable {
     public var personenAnzahl: Int?
     public var maxPersonenAnzahl: Int?
     
-    public init(id: UUID? = nil, titel: String? = nil, beschreibung: String? = nil, betreuungsPersonen: [Person]? = nil, personen: [Person]? = nil, personenAnzahl: Int? = nil, maxPersonenAnzahl: Int? = nil) {
+    public init(
+        id: UUID? = nil,
+        titel: String? = nil,
+        beschreibung: String? = nil,
+        betreuungsPersonen: [Person]? = nil,
+        personen: [Person]? = nil,
+        personenAnzahl: Int? = nil,
+        maxPersonenAnzahl: Int? = nil
+    ) {
         self.id = id
         self.titel = titel
         self.beschreibung = beschreibung

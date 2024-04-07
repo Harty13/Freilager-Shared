@@ -16,7 +16,15 @@ public struct Person: Identifiable, Codable {
     public var rechte: [Rechte]?
     public var barcodeNummer: String?
     
-    public init(id: UUID? = nil, vorname: String? = nil, nachname: String? = nil, klasse: String? = nil, rolle: Rolle? = nil, rechte: [Rechte]? = nil, barcodeNummer: String? = nil) {
+    public init(
+        id: UUID? = nil,
+        vorname: String? = nil,
+        nachname: String? = nil,
+        klasse: String? = nil,
+        rolle: Rolle? = nil,
+        rechte: [Rechte]? = nil,
+        barcodeNummer: String? = nil
+    ) {
         self.id = id
         self.vorname = vorname
         self.nachname = nachname

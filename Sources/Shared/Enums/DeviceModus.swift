@@ -10,5 +10,5 @@ import Foundation
 public enum DeviceModus: String, Codable {
     case info = "info"
     case angebot = "angebot"
-    case person = ""
+    case person = "person"
 }

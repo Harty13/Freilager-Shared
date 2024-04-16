@@ -82,6 +82,25 @@ public class DeviceRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct UpdateDeviceStatusRequest: RequestProtocol {
+        public typealias RequestBody = UpdateDeviceStatusRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "updateDeviceStatus"
+        
+        public struct UpdateDeviceStatusRequestBody: Codable {
+            public var id: UUID
+            public var deviceStatus: DeviceStatus
+            
+            public init(id: UUID, deviceStatus: DeviceStatus) {
+                self.id = id
+                self.deviceStatus = deviceStatus
+            }
+        }
+        
+        public init() {}
+    }
+    
     public struct InitializeDeviceRequest: RequestProtocol {
         public typealias RequestBody = InitializeDeviceBody
         public typealias ResponseBody = Device

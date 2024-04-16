@@ -45,10 +45,12 @@ public class DeviceRoute: RouteProtocol {
         
         public struct UpdateRequestBody: Codable {
             public var id: UUID
+            public var deviceStatus: DeviceStatus
             public var kommentar: String?
             
-            public init(id: UUID, kommentar: String?) {
+            public init(id: UUID, deviceStatus: DeviceStatus, kommentar: String?) {
                 self.id = id
+                self.deviceStatus = deviceStatus
                 self.kommentar = kommentar
             }
         }

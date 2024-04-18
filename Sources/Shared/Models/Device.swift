@@ -16,7 +16,7 @@ public struct Device: Identifiable, Codable {
     public var currentAngebot: Angebot?
     public var deviceStatus: DeviceStatus
     public var kommentar: String?
-    public var createdAt: Date
+    public var createdAt: Date?
     
     public init(
         id: UUID? = nil,
@@ -27,7 +27,7 @@ public struct Device: Identifiable, Codable {
         currentAngebot: Angebot? = nil,
         deviceStatus: DeviceStatus,
         kommentar: String? = nil,
-        createdAt: Date
+        createdAt: Date? = nil
     ) {
         self.id = id
         self.uniqueIdentifier = uniqueIdentifier

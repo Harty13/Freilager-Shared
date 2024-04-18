@@ -84,24 +84,57 @@ public class DeviceRoute: RouteProtocol {
         public init() {}
     }
     
-    public struct UpdateDeviceStatusRequest: RequestProtocol {
-        public typealias RequestBody = UpdateDeviceStatusRequestBody
+    public struct AcceptDeviceRequest: RequestProtocol {
+        public typealias RequestBody = AcceptDeviceRequestBody
         public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
-        public let path = "updateDeviceStatus"
+        public let path = "acceptDevice"
         
-        public struct UpdateDeviceStatusRequestBody: Codable {
+        public struct AcceptDeviceRequestBody: Codable {
             public var id: UUID
-            public var deviceStatus: DeviceStatus
             
-            public init(id: UUID, deviceStatus: DeviceStatus) {
+            public init(id: UUID) {
                 self.id = id
-                self.deviceStatus = deviceStatus
+            }
+        }
+        public init() {}
+    }
+    
+    public struct RejectDeviceRequest: RequestProtocol {
+        public typealias RequestBody = RejectDeviceRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "rejectDevice"
+        
+        public struct RejectDeviceRequestBody: Codable {
+            public var id: UUID
+            
+            public init(id: UUID) {
+                self.id = id
             }
         }
         
         public init() {}
     }
+    
+//    public struct UpdateDeviceStatusRequest: RequestProtocol {
+//        public typealias RequestBody = UpdateDeviceStatusRequestBody
+//        public typealias ResponseBody = HTTPStatus
+//        public let method = HTTPMethod.post
+//        public let path = "updateDeviceStatus"
+//        
+//        public struct UpdateDeviceStatusRequestBody: Codable {
+//            public var id: UUID
+//            public var deviceStatus: DeviceStatus
+//            
+//            public init(id: UUID, deviceStatus: DeviceStatus) {
+//                self.id = id
+//                self.deviceStatus = deviceStatus
+//            }
+//        }
+//        
+//        public init() {}
+//    }
     
     public struct InitializeDeviceRequest: RequestProtocol {
         public typealias RequestBody = InitializeDeviceBody

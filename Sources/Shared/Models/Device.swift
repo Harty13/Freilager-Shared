@@ -11,21 +11,23 @@ public struct Device: Identifiable, Codable {
     public var id: UUID?
     public var uniqueIdentifier: UUID?
     public var deviceType: DeviceType?
-    public var deviceModus: DeviceModus?
+    public var deviceModus: DeviceModus
     public var owner: Person?
     public var currentAngebot: Angebot?
-    public var deviceStatus: DeviceStatus?
+    public var deviceStatus: DeviceStatus
     public var kommentar: String?
+    public var createdAt: Date
     
     public init(
         id: UUID? = nil,
         uniqueIdentifier: UUID? = nil,
         deviceType: DeviceType? = nil,
-        deviceModus: DeviceModus? = nil,
+        deviceModus: DeviceModus,
         owner: Person? = nil,
         currentAngebot: Angebot? = nil,
-        deviceStatus: DeviceStatus? = nil,
-        kommentar: String? = nil
+        deviceStatus: DeviceStatus,
+        kommentar: String? = nil,
+        createdAt: Date
     ) {
         self.id = id
         self.uniqueIdentifier = uniqueIdentifier
@@ -35,6 +37,7 @@ public struct Device: Identifiable, Codable {
         self.currentAngebot = currentAngebot
         self.deviceStatus = deviceStatus
         self.kommentar = kommentar
+        self.createdAt = createdAt
     }
 }
 

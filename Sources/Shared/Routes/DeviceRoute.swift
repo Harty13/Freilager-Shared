@@ -84,13 +84,13 @@ public class DeviceRoute: RouteProtocol {
         public init() {}
     }
     
-    public struct AcceptDeviceRequest: RequestProtocol {
-        public typealias RequestBody = AcceptDeviceRequestBody
+    public struct ApproveDeviceRequest: RequestProtocol {
+        public typealias RequestBody = ApproveDeviceRequestBody
         public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
-        public let path = "acceptDevice"
+        public let path = "approveDevice"
         
-        public struct AcceptDeviceRequestBody: Codable {
+        public struct ApproveDeviceRequestBody: Codable {
             public var id: UUID
             
             public init(id: UUID) {

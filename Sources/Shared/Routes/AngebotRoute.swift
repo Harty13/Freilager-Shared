@@ -101,10 +101,12 @@ public class AngebotRoute: RouteProtocol {
         public struct VerlassenRequestBody: Codable {
             public let personID: UUID
             public let angebotID: UUID
+            public let deviceID: UUID
             
-            public init(personID: UUID, angebotID: UUID) {
+            public init(personID: UUID, angebotID: UUID, deviceID: UUID) {
                 self.personID = personID
                 self.angebotID = angebotID
+                self.deviceID = deviceID
             }
         }
         

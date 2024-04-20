@@ -43,7 +43,7 @@ public class PersonRoute: RouteProtocol {
     
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
-        public typealias ResponseBody = Person
+        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "update"
         

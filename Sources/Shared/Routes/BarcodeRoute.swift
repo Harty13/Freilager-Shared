@@ -41,6 +41,7 @@ public class BarcodeRoute: RouteProtocol {
                 case login
                 case checkIn
                 case checkOut
+                case alreadyCheckedIn(at: Angebot)
             }
         }
         

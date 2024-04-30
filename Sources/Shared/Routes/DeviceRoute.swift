@@ -22,14 +22,16 @@ public class DeviceRoute: RouteProtocol {
             public var uniqueIdentifier: UUID
             public var deviceType: DeviceType
             public var deviceModus: DeviceModus
-            public var owner: Person?
+            public var ownerBarcode: String?
+            public var ownerPassword: String?
             public var kommentar: String?
             
-            public init(uniqueIdentifier: UUID, deviceType: DeviceType, deviceModus: DeviceModus, owner: Person? = nil, kommentar: String? = nil) {
+            public init(uniqueIdentifier: UUID, deviceType: DeviceType, deviceModus: DeviceModus, ownerBarcode: String? = nil, ownerPassword: String? = nil, kommentar: String? = nil) {
                 self.uniqueIdentifier = uniqueIdentifier
                 self.deviceType = deviceType
                 self.deviceModus = deviceModus
-                self.owner = owner
+                self.ownerBarcode = ownerBarcode
+                self.ownerPassword = ownerPassword
                 self.kommentar = kommentar
             }
         }

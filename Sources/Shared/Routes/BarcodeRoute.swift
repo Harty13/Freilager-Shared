@@ -42,6 +42,7 @@ public class BarcodeRoute: RouteProtocol {
                 case checkIn
                 case checkOut
                 case alreadyCheckedIn(at: Angebot)
+                case angebotIsFull
                 
                 public static func ==(lhs: Action, rhs: Action) -> Bool {
                     switch (lhs, rhs) {

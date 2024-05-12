@@ -12,6 +12,23 @@ public class PersonRoute: RouteProtocol {
     
     public init() {}
     
+    public struct GetFromBarcode: RequestProtocol {
+        public typealias RequestBody = GetFromBarcodeRequestBody
+        public typealias ResponseBody = Person
+        public let method = HTTPMethod.post
+        public let path = "getFromBarcode"
+        
+        public struct GetFromBarcodeRequestBody: Codable {
+            public var barcode: String
+            
+            public init(barcode: String) {
+                self.barcode = barcode
+            }
+        }
+        
+        public init() {}
+    }
+    
     public struct CreateRequest: RequestProtocol {
         public typealias RequestBody = CreateRequestBody
         public typealias ResponseBody = HTTPStatus

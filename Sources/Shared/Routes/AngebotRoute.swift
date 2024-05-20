@@ -113,6 +113,23 @@ public class AngebotRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct BeendenRequest: RequestProtocol {
+        public typealias RequestBody = BeendenRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "beenden"
+        
+        public struct BeendenRequestBody: Codable {
+            public let angebotID: UUID
+            
+            public init(angebotID: UUID) {
+                self.angebotID = angebotID
+            }
+        }
+        
+        public init() {}
+    }
+    
     public struct GetAllRequest: RequestProtocol {
         public typealias RequestBody = Empty
         public typealias ResponseBody = [Angebot]

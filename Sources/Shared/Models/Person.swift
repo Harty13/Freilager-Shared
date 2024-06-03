@@ -15,6 +15,7 @@ public struct Person: Identifiable, Codable {
     public var rolle: Rolle?
     public var rechte: [Rechte]?
     public var barcodeNummer: String?
+    public var woche: Woche?
     
     public init(
         id: UUID? = nil,
@@ -23,7 +24,8 @@ public struct Person: Identifiable, Codable {
         klasse: String? = nil,
         rolle: Rolle? = nil,
         rechte: [Rechte]? = nil,
-        barcodeNummer: String? = nil
+        barcodeNummer: String? = nil,
+        woche: Woche? = nil
     ) {
         self.id = id
         self.vorname = vorname
@@ -32,5 +34,6 @@ public struct Person: Identifiable, Codable {
         self.rolle = rolle
         self.rechte = rechte
         self.barcodeNummer = barcodeNummer
+        self.woche = woche
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 public enum DeviceStatus: String, Codable {
-    case notSetup
+//    case notSetup
     case waitingForApproval
     case approved
 }

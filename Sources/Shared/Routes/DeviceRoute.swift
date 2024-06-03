@@ -140,7 +140,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct InitializeDeviceRequest: RequestProtocol {
         public typealias RequestBody = InitializeDeviceBody
-        public typealias ResponseBody = Device
+        public typealias ResponseBody = Device?
         public let method = HTTPMethod.post
         public let path = "initialize"
         

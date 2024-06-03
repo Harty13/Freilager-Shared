@@ -140,7 +140,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct InitializeDeviceRequest: RequestProtocol {
         public typealias RequestBody = InitializeDeviceBody
-        public typealias ResponseBody = Device?
+        public typealias ResponseBody = InitializeDeviceResponse
         public let method = HTTPMethod.post
         public let path = "initialize"
         
@@ -151,6 +151,15 @@ public class DeviceRoute: RouteProtocol {
                 self.uniqueIdentifier = uniqueIdentifier
             }
         }
+        
+        public struct InitializeDeviceResponse: Codable {
+            public var device: Device?
+            
+            public init(device: Device?) {
+                self.device = device
+            }
+        }
+
 
         
         public init() {}

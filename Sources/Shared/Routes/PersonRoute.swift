@@ -43,8 +43,9 @@ public class PersonRoute: RouteProtocol {
             public let passwordHash: String
             public let rechte: [Rechte]?
             public let barcodeNummer: String
+            public let woche: Woche?
             
-            public init(vorname: String, nachname: String, rolle: Rolle, klasse: String?, passwordHash: String, rechte: [Rechte]?, barcodeNummer: String) {
+            public init(vorname: String, nachname: String, rolle: Rolle, klasse: String?, passwordHash: String, rechte: [Rechte]?, barcodeNummer: String, woche: Woche?) {
                 self.vorname = vorname
                 self.nachname = nachname
                 self.rolle = rolle
@@ -52,6 +53,7 @@ public class PersonRoute: RouteProtocol {
                 self.passwordHash = passwordHash
                 self.rechte = rechte
                 self.barcodeNummer = barcodeNummer
+                self.woche = woche
             }
         }
         
@@ -72,8 +74,9 @@ public class PersonRoute: RouteProtocol {
             public let klasse: String?
             public let passwordHash: String?
             public let rechte: [Rechte]?
+            public let woche: Woche?
             
-            public init(id: UUID, vorname: String?, nachname: String?, rolle: Rolle?, klasse: String?, passwordHash: String?, rechte: [Rechte]?) {
+            public init(id: UUID, vorname: String?, nachname: String?, rolle: Rolle?, klasse: String?, passwordHash: String?, rechte: [Rechte]?, woche: Woche?) {
                 self.id = id
                 self.vorname = vorname
                 self.nachname = nachname
@@ -81,6 +84,7 @@ public class PersonRoute: RouteProtocol {
                 self.klasse = klasse
                 self.passwordHash = passwordHash
                 self.rechte = rechte
+                self.woche = woche
             }
         }
         

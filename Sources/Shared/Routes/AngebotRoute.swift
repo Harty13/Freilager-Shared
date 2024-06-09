@@ -21,10 +21,22 @@ public class AngebotRoute: RouteProtocol {
         public struct CreateRequestBody: Codable {
             public let titel: String
             public let beschreibung: String
+            public let hasMaxPersonenAnzahl: Bool
+            public let maxPersonenAnzahl: Int
+            public let checkOutRequired: Bool
             
-            public init(titel: String, beschreibung: String) {
+            public init(
+                titel: String,
+                beschreibung: String,
+                hasMaxPersonenAnzahl: Bool,
+                maxPersonenAnzahl: Int,
+                checkOutRequired: Bool
+            ) {
                 self.titel = titel
                 self.beschreibung = beschreibung
+                self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
+                self.maxPersonenAnzahl = maxPersonenAnzahl
+                self.checkOutRequired = checkOutRequired
             }
         }
         
@@ -41,13 +53,25 @@ public class AngebotRoute: RouteProtocol {
             public var id: UUID
             public let titel: String?
             public let beschreibung: String?
+            public let hasMaxPersonenAnzahl: Bool?
             public let maxPersonenAnzahl: Int?
+            public let checkOutRequired: Bool?
             
-            public init(id: UUID, titel: String? = nil, beschreibung: String? = nil, maxPersonenAnzahl: Int? = nil) {
+            
+            public init(
+                id: UUID,
+                titel: String? = nil,
+                beschreibung: String? = nil,
+                hasMaxPersonenAnzahl: Bool? = nil,
+                maxPersonenAnzahl: Int? = nil,
+                checkOutRequired: Bool? = nil
+            ) {
                 self.id = id
                 self.titel = titel
                 self.beschreibung = beschreibung
+                self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
                 self.maxPersonenAnzahl = maxPersonenAnzahl
+                self.checkOutRequired = checkOutRequired
             }
         }
         

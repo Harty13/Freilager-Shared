@@ -15,7 +15,11 @@ public struct Angebot: Identifiable, Codable {
     
     public var personen: [Person]?
     public var personenAnzahl: Int?
+    
+    public var hasMaxPersonenAnzahl: Bool?
     public var maxPersonenAnzahl: Int?
+    
+    public var checkOutRequired: Bool?
     
     public init(
         id: UUID? = nil,
@@ -24,7 +28,9 @@ public struct Angebot: Identifiable, Codable {
         betreuungsPersonen: [Person]? = nil,
         personen: [Person]? = nil,
         personenAnzahl: Int? = nil,
-        maxPersonenAnzahl: Int? = nil
+        hasMaxPersonenAnzahl: Bool? = nil,
+        maxPersonenAnzahl: Int? = nil,
+        checkOutRequired: Bool? = nil
     ) {
         self.id = id
         self.titel = titel
@@ -32,6 +38,8 @@ public struct Angebot: Identifiable, Codable {
         self.betreuungsPersonen = betreuungsPersonen
         self.personen = personen
         self.personenAnzahl = personenAnzahl
+        self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
         self.maxPersonenAnzahl = maxPersonenAnzahl
+        self.checkOutRequired = checkOutRequired
     }
 }

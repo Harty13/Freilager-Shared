@@ -36,23 +36,27 @@ public class PersonRoute: RouteProtocol {
         public let path = "create"
         
         public struct CreateRequestBody: Codable {
+            public let barcodeNummer: String
             public let vorname: String
             public let nachname: String
-            public let rolle: Rolle
             public let klasse: String?
+            public let cluster: String?
+            public let kommentar: String?
+            public let rolle: Rolle
             public let passwordHash: String
             public let rechte: [Rechte]?
-            public let barcodeNummer: String
             public let woche: Woche?
             
-            public init(vorname: String, nachname: String, rolle: Rolle, klasse: String?, passwordHash: String, rechte: [Rechte]?, barcodeNummer: String, woche: Woche?) {
+            public init(barcodeNummer: String, vorname: String, nachname: String, klasse: String?, cluster: String?, kommentar: String?, rolle: Rolle, passwordHash: String, rechte: [Rechte]?, woche: Woche?) {
+                self.barcodeNummer = barcodeNummer
                 self.vorname = vorname
                 self.nachname = nachname
-                self.rolle = rolle
                 self.klasse = klasse
+                self.cluster = cluster
+                self.kommentar = kommentar
+                self.rolle = rolle
                 self.passwordHash = passwordHash
                 self.rechte = rechte
-                self.barcodeNummer = barcodeNummer
                 self.woche = woche
             }
         }
@@ -70,18 +74,22 @@ public class PersonRoute: RouteProtocol {
             public let id: UUID
             public let vorname: String?
             public let nachname: String?
-            public let rolle: Rolle?
             public let klasse: String?
+            public let cluster: String?
+            public let kommentar: String?
+            public let rolle: Rolle?
             public let passwordHash: String?
             public let rechte: [Rechte]?
             public let woche: Woche?
             
-            public init(id: UUID, vorname: String?, nachname: String?, rolle: Rolle?, klasse: String?, passwordHash: String?, rechte: [Rechte]?, woche: Woche?) {
+            public init(id: UUID, vorname: String?, nachname: String?, klasse: String?, cluster: String?, kommentar: String?, rolle: Rolle?, passwordHash: String?, rechte: [Rechte]?, woche: Woche?) {
                 self.id = id
                 self.vorname = vorname
                 self.nachname = nachname
-                self.rolle = rolle
                 self.klasse = klasse
+                self.cluster = cluster
+                self.kommentar = kommentar
+                self.rolle = rolle
                 self.passwordHash = passwordHash
                 self.rechte = rechte
                 self.woche = woche

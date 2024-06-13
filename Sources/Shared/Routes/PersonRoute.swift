@@ -124,4 +124,14 @@ public class PersonRoute: RouteProtocol {
         
         public init() {}
     }
+    
+    public struct UploadWochenListeRequest: RequestProtocol {
+        public typealias RequestBody = Data
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "uploadWochenliste"
+        
+        public init() {}
+        
+    }
 }

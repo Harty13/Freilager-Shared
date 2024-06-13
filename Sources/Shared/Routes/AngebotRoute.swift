@@ -162,4 +162,23 @@ public class AngebotRoute: RouteProtocol {
         
         public init() {}
     }
+    
+    public struct CheckOutPersonRequest: RequestProtocol {
+        public typealias RequestBody = CheckOutPersonRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "checkOutPerson"
+
+        public struct CheckOutPersonRequestBody: Codable {
+            public let personID: UUID
+            public let angebotID: UUID
+            
+            public init(personID: UUID, angebotID: UUID) {
+                self.personID = personID
+                self.angebotID = angebotID
+            }
+        }
+        
+        public init() {}
+    }
 }

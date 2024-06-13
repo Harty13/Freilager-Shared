@@ -99,6 +99,7 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
     
+    
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
         public typealias ResponseBody = HTTPStatus

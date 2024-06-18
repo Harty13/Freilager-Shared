@@ -181,4 +181,23 @@ public class AngebotRoute: RouteProtocol {
         
         public init() {}
     }
+    
+    public struct GetVisitedPersonsRequest: RequestProtocol {
+        public typealias RequestBody = CheckOutPersonRequestBody
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "getVisitedPersons"
+
+        public struct CheckOutPersonRequestBody: Codable {
+            public let visited: [Person]
+            public let notVisited: [Person]
+            
+            public init(visited: [Person], notVisited: [Person]) {
+                self.visited = visited
+                self.notVisited = notVisited
+            }
+        }
+        
+        public init() {}
+    }
 }

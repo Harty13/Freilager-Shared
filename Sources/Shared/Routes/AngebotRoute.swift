@@ -183,12 +183,20 @@ public class AngebotRoute: RouteProtocol {
     }
     
     public struct GetVisitedPersonsRequest: RequestProtocol {
-        public typealias RequestBody = CheckOutPersonRequestBody
-        public typealias ResponseBody = HTTPStatus
+        public typealias RequestBody = GetVisitedPersonsRequestBody
+        public typealias ResponseBody = GetVisitedPersonsResponseBody
         public let method = HTTPMethod.post
         public let path = "getVisitedPersons"
+        
+        public struct GetVisitedPersonsRequestBody: Codable {
+            public let angebotID: UUID
+            
+            public init(angebotID: UUID) {
+                self.angebotID = angebotID
+            }
+        }
 
-        public struct CheckOutPersonRequestBody: Codable {
+        public struct GetVisitedPersonsResponseBody: Codable {
             public let visited: [Person]
             public let notVisited: [Person]
             

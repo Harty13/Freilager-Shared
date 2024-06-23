@@ -197,7 +197,7 @@ public class AngebotRoute: RouteProtocol {
     public struct GetVisitedPersonsRequest: RequestProtocol {
         public typealias RequestBody = GetVisitedPersonsRequestBody
         public typealias ResponseBody = GetVisitedPersonsResponseBody
-        public let method = HTTPMethod.get
+        public let method = HTTPMethod.post
         public let path = "getVisitedPersons"
         
         public struct GetVisitedPersonsRequestBody: Codable {

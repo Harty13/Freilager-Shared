@@ -52,26 +52,32 @@ public class AngebotRoute: RouteProtocol {
         public struct UpdateRequestBody: Codable {
             public var id: UUID
             public let titel: String?
+            public let emoji: String?
             public let beschreibung: String?
             public let hasMaxPersonenAnzahl: Bool?
             public let maxPersonenAnzahl: Int?
             public let checkOutRequired: Bool?
+            public let hasAuswertung: Bool?
             
             
             public init(
                 id: UUID,
                 titel: String? = nil,
+                emoji: String? = nil,
                 beschreibung: String? = nil,
                 hasMaxPersonenAnzahl: Bool? = nil,
                 maxPersonenAnzahl: Int? = nil,
-                checkOutRequired: Bool? = nil
+                checkOutRequired: Bool? = nil,
+                hasAuswertung: Bool? = nil
             ) {
                 self.id = id
                 self.titel = titel
+                self.emoji = emoji
                 self.beschreibung = beschreibung
                 self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
                 self.maxPersonenAnzahl = maxPersonenAnzahl
                 self.checkOutRequired = checkOutRequired
+                self.hasAuswertung = hasAuswertung
             }
         }
         
@@ -185,7 +191,7 @@ public class AngebotRoute: RouteProtocol {
     public struct GetVisitedPersonsRequest: RequestProtocol {
         public typealias RequestBody = GetVisitedPersonsRequestBody
         public typealias ResponseBody = GetVisitedPersonsResponseBody
-        public let method = HTTPMethod.post
+        public let method = HTTPMethod.get
         public let path = "getVisitedPersons"
         
         public struct GetVisitedPersonsRequestBody: Codable {

@@ -10,6 +10,7 @@ import Foundation
 public struct Angebot: Identifiable, Codable {
     public var id: UUID?
     public var titel: String?
+    public var emoji: String?
     public var beschreibung: String?
     public var betreuungsPersonen: [Person]?
     
@@ -21,19 +22,24 @@ public struct Angebot: Identifiable, Codable {
     
     public var checkOutRequired: Bool?
     
+    public var hasAuswertung: Bool?
+    
     public init(
         id: UUID? = nil,
         titel: String? = nil,
+        emoji: String? = nil,
         beschreibung: String? = nil,
         betreuungsPersonen: [Person]? = nil,
         personen: [Person]? = nil,
         personenAnzahl: Int? = nil,
         hasMaxPersonenAnzahl: Bool? = nil,
         maxPersonenAnzahl: Int? = nil,
-        checkOutRequired: Bool? = nil
+        checkOutRequired: Bool? = nil,
+        hasAuswertung: Bool? = nil
     ) {
         self.id = id
         self.titel = titel
+        self.emoji = emoji
         self.beschreibung = beschreibung
         self.betreuungsPersonen = betreuungsPersonen
         self.personen = personen
@@ -41,5 +47,6 @@ public struct Angebot: Identifiable, Codable {
         self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
         self.maxPersonenAnzahl = maxPersonenAnzahl
         self.checkOutRequired = checkOutRequired
+        self.hasAuswertung = hasAuswertung
     }
 }

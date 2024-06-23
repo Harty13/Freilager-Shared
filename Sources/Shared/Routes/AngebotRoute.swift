@@ -20,23 +20,29 @@ public class AngebotRoute: RouteProtocol {
         
         public struct CreateRequestBody: Codable {
             public let titel: String
+            public let emoji: String
             public let beschreibung: String
             public let hasMaxPersonenAnzahl: Bool
             public let maxPersonenAnzahl: Int
             public let checkOutRequired: Bool
+            public let hasAuswertung: Bool
             
             public init(
                 titel: String,
+                emoji: String,
                 beschreibung: String,
                 hasMaxPersonenAnzahl: Bool,
                 maxPersonenAnzahl: Int,
-                checkOutRequired: Bool
+                checkOutRequired: Bool,
+                hasAuswertung: Bool
             ) {
                 self.titel = titel
+                self.emoji = emoji
                 self.beschreibung = beschreibung
                 self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl
                 self.maxPersonenAnzahl = maxPersonenAnzahl
                 self.checkOutRequired = checkOutRequired
+                self.hasAuswertung = hasAuswertung
             }
         }
         

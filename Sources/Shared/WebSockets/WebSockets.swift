@@ -47,10 +47,10 @@ public struct SubscriptionUpdate: Codable {
 }
 
 public struct SubscriptionRequest: Codable {
-    public var types: [SubscriptionType]
+    public var types: Set<SubscriptionType>
     public var sendInitialData: Bool
     
-    public init(types: [SubscriptionType], sendInitialData: Bool) {
+    public init(types: Set<SubscriptionType>, sendInitialData: Bool) {
         self.types = types
         self.sendInitialData = sendInitialData
     }

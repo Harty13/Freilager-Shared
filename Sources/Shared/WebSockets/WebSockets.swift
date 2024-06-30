@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  WebSockets.swift
+//
 //
 //  Created by Erik Schnell on 30.06.2024.
 //
@@ -53,11 +53,5 @@ public struct SubscriptionRequest: Codable {
     public init(subscriptions: [SubscriptionType], sendInitialData: Bool) {
         self.subscriptions = subscriptions
         self.sendInitialData = sendInitialData
-    }
-}
-
-extension SubscriptionType {
-    func getDataType() -> Codable {
-        return [Angebot].self
     }
 }

@@ -9,17 +9,26 @@ import Foundation
 
 public enum SubscriptionType: Codable, Hashable {
     case device(uniqueIdentifier: UUID)
-    case angebotDetails(angebotID: UUID)
     case angebote
+    case angebotDetails(angebotID: UUID)
+    case personen
+    case personDetails(personID: UUID)
+    case geräte
     
     var dataType: Codable.Type {
         switch self {
         case .device(let uniqueIdentifier):
             return Device?.self
-        case .angebotDetails(let angebotID):
-            return Angebot?.self
         case .angebote:
             return [Angebot].self
+        case .angebotDetails(let angebotID):
+            return Angebot?.self
+        case .personen:
+            return [Person].self
+        case .personDetails(_):
+            return Person?.self
+        case .geräte:
+            return [Device].self
         }
     }
 }

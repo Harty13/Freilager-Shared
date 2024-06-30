@@ -47,11 +47,11 @@ public struct SubscriptionUpdate: Codable {
 }
 
 public struct SubscriptionRequest: Codable {
-    public var subscriptions: [SubscriptionType]
+    public var types: [SubscriptionType]
     public var sendInitialData: Bool
     
-    public init(subscriptions: [SubscriptionType], sendInitialData: Bool) {
-        self.subscriptions = subscriptions
+    public init(types: [SubscriptionType], sendInitialData: Bool) {
+        self.types = types
         self.sendInitialData = sendInitialData
     }
 }

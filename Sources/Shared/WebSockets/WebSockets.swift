@@ -43,15 +43,23 @@ public struct SubscriptionResponse: Codable {
 
 public struct SubscriptionUpdate: Codable {
     public let type: SubscriptionType
-    public var data: Data
+    public var data: Data?
     
-    public init(type: SubscriptionType, from codable: Codable) throws {
+    public init(type: SubscriptionType, from codable: Codable?) throws {
         self.type = type
-        self.data = try codable.encode()
+        if let codable {
+            self.data = try codable.encode()
+        } else {
+            self.data = nil
+        }
     }
     
-    public func decodedData() throws -> Codable {
-        return try type.dataType.decode(from: data)
+    public func decodedData() throws -> Codable? {
+        if let data {
+            return try type.dataType.decode(from: data)
+        } else {
+            return nil
+        }
     }
 }
 

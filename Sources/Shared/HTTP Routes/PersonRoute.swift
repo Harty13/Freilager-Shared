@@ -29,43 +29,43 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct CreatePersonRequestBody: Codable {
+        public let barcodeNummer: String
+        public let vorname: String
+        public let nachname: String
+        public let klasse: String?
+        public let cluster: String?
+        public let kommentar: String?
+        public let rolle: Rolle
+        public let passwordHash: String
+        public let rechte: [Rechte]?
+        public let woche: Woche?
+        
+        public init(barcodeNummer: String, vorname: String, nachname: String, klasse: String?, cluster: String?, kommentar: String?, rolle: Rolle, passwordHash: String, rechte: [Rechte]?, woche: Woche?) {
+            self.barcodeNummer = barcodeNummer
+            self.vorname = vorname
+            self.nachname = nachname
+            self.klasse = klasse
+            self.cluster = cluster
+            self.kommentar = kommentar
+            self.rolle = rolle
+            self.passwordHash = passwordHash
+            self.rechte = rechte
+            self.woche = woche
+        }
+    }
+    
     public struct CreateRequest: RequestProtocol {
-        public typealias RequestBody = CreateRequestBody
+        public typealias RequestBody = CreatePersonRequestBody
         public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "create"
-        
-        public struct CreateRequestBody: Codable {
-            public let barcodeNummer: String
-            public let vorname: String
-            public let nachname: String
-            public let klasse: String?
-            public let cluster: String?
-            public let kommentar: String?
-            public let rolle: Rolle
-            public let passwordHash: String
-            public let rechte: [Rechte]?
-            public let woche: Woche?
-            
-            public init(barcodeNummer: String, vorname: String, nachname: String, klasse: String?, cluster: String?, kommentar: String?, rolle: Rolle, passwordHash: String, rechte: [Rechte]?, woche: Woche?) {
-                self.barcodeNummer = barcodeNummer
-                self.vorname = vorname
-                self.nachname = nachname
-                self.klasse = klasse
-                self.cluster = cluster
-                self.kommentar = kommentar
-                self.rolle = rolle
-                self.passwordHash = passwordHash
-                self.rechte = rechte
-                self.woche = woche
-            }
-        }
         
         public init() {}
     }
     
     public struct CreateFromListRequest: RequestProtocol {
-        public typealias RequestBody = [Person]
+        public typealias RequestBody = [CreatePersonRequestBody]
         public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "createFromList"

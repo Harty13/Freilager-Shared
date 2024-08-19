@@ -64,6 +64,15 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct CreateFromListRequest: RequestProtocol {
+        public typealias RequestBody = [Person]
+        public typealias ResponseBody = HTTPStatus
+        public let method = HTTPMethod.post
+        public let path = "createFromList"
+
+        public init() {}
+    }
+    
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
         public typealias ResponseBody = HTTPStatus

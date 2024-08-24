@@ -92,6 +92,7 @@ public class AngebotRoute: RouteProtocol {
     
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
+
         public let method = HTTPMethod.delete
         public let path = "delete"
         
@@ -128,6 +129,7 @@ public class AngebotRoute: RouteProtocol {
     
     public struct VerlassenRequest: RequestProtocol {
         public typealias RequestBody = VerlassenRequestBody
+
         public let method = HTTPMethod.post
         public let path = "verlassen"
         
@@ -148,6 +150,7 @@ public class AngebotRoute: RouteProtocol {
     
     public struct BeendenRequest: RequestProtocol {
         public typealias RequestBody = BeendenRequestBody
+
         public let method = HTTPMethod.post
         public let path = "beenden"
         
@@ -164,6 +167,7 @@ public class AngebotRoute: RouteProtocol {
     
     public struct CheckOutPersonRequest: RequestProtocol {
         public typealias RequestBody = CheckOutPersonRequestBody
+
         public let method = HTTPMethod.post
         public let path = "checkOutPerson"
 

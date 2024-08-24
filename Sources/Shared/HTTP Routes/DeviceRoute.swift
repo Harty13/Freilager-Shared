@@ -14,7 +14,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct CreateRequest: RequestProtocol {
         public typealias RequestBody = CreateRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "create"
         
@@ -41,7 +41,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "update"
         
@@ -62,7 +62,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "delete"
         
@@ -77,18 +77,9 @@ public class DeviceRoute: RouteProtocol {
         public init() {}
     }
     
-    public struct GetAllRequest: RequestProtocol {
-        public typealias RequestBody = Empty
-        public typealias ResponseBody = [Device]
-        public let method = HTTPMethod.post
-        public let path = "getAll"
-        
-        public init() {}
-    }
-    
     public struct ApproveDeviceRequest: RequestProtocol {
         public typealias RequestBody = ApproveDeviceRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "approveDevice"
         
@@ -104,7 +95,7 @@ public class DeviceRoute: RouteProtocol {
     
     public struct RejectDeviceRequest: RequestProtocol {
         public typealias RequestBody = RejectDeviceRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "rejectDevice"
         
@@ -118,25 +109,6 @@ public class DeviceRoute: RouteProtocol {
         
         public init() {}
     }
-    
-//    public struct UpdateDeviceStatusRequest: RequestProtocol {
-//        public typealias RequestBody = UpdateDeviceStatusRequestBody
-//        public typealias ResponseBody = HTTPStatus
-//        public let method = HTTPMethod.post
-//        public let path = "updateDeviceStatus"
-//        
-//        public struct UpdateDeviceStatusRequestBody: Codable {
-//            public var id: UUID
-//            public var deviceStatus: DeviceStatus
-//            
-//            public init(id: UUID, deviceStatus: DeviceStatus) {
-//                self.id = id
-//                self.deviceStatus = deviceStatus
-//            }
-//        }
-//        
-//        public init() {}
-//    }
     
     public struct InitializeDeviceRequest: RequestProtocol {
         public typealias RequestBody = InitializeDeviceBody

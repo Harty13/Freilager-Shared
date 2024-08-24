@@ -57,7 +57,7 @@ public class PersonRoute: RouteProtocol {
     
     public struct CreateRequest: RequestProtocol {
         public typealias RequestBody = CreatePersonRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "create"
         
@@ -66,7 +66,7 @@ public class PersonRoute: RouteProtocol {
     
     public struct CreateFromListRequest: RequestProtocol {
         public typealias RequestBody = [CreatePersonRequestBody]
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "createFromList"
 
@@ -75,7 +75,7 @@ public class PersonRoute: RouteProtocol {
     
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "update"
         
@@ -111,7 +111,7 @@ public class PersonRoute: RouteProtocol {
     
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "delete"
         
@@ -126,18 +126,10 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
     
-    public struct GetAllRequest: RequestProtocol {
-        public typealias RequestBody = Empty
-        public typealias ResponseBody = [Person]
-        public let method = HTTPMethod.post
-        public let path = "getAll"
-        
-        public init() {}
-    }
-    
+
     public struct UploadWochenListeRequest: RequestProtocol {
         public typealias RequestBody = Data
-        public typealias ResponseBody = HTTPStatus
+
         public let method = HTTPMethod.post
         public let path = "uploadWochenliste"
         

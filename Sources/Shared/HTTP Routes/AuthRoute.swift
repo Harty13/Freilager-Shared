@@ -15,6 +15,7 @@ public class AuthRoute: RouteProtocol {
     public struct LoginRequest: RequestProtocol {
         public typealias RequestBody = LoginRequestBody
         public typealias ResponseBody = LoginResponseBody
+        
         public let method = HTTPMethod.post
         public let path = "login"
         
@@ -43,7 +44,7 @@ public class AuthRoute: RouteProtocol {
     
     public struct LogoutRequest: RequestProtocol {
         public typealias RequestBody = Empty
-        public typealias ResponseBody = HTTPStatus
+        
         public let method = HTTPMethod.post
         public let path = "logout"
         

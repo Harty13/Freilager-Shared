@@ -51,6 +51,7 @@ public class AngebotRoute: RouteProtocol {
     
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
+        
         public let method = HTTPMethod.post
         public let path = "update"
         

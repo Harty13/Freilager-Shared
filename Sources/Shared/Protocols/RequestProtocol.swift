@@ -9,7 +9,7 @@ import Foundation
 
 public protocol RequestProtocol {
     associatedtype RequestBody: Codable
-    associatedtype ResponseBody: Codable = Void?
+    associatedtype ResponseBody: Codable = HTTPStatus
     var method: HTTPMethod { get }
     var path: String { get }
 }

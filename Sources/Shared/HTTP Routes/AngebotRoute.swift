@@ -14,7 +14,7 @@ public class AngebotRoute: RouteProtocol {
 
     public struct CreateRequest: RequestProtocol {
         public typealias RequestBody = CreateRequestBody
-        public typealias ResponseBody = HTTPStatus
+        
         public let method = HTTPMethod.post
         public let path = "create"
         
@@ -51,7 +51,6 @@ public class AngebotRoute: RouteProtocol {
     
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "update"
         
@@ -92,7 +91,6 @@ public class AngebotRoute: RouteProtocol {
     
     public struct DeleteRequest: RequestProtocol {
         public typealias RequestBody = DeleteRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.delete
         public let path = "delete"
         
@@ -109,7 +107,6 @@ public class AngebotRoute: RouteProtocol {
     
     public struct UebernehmenRequest: RequestProtocol {
         public typealias RequestBody = UebernehmenRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "uebernehmen"
         
@@ -130,7 +127,6 @@ public class AngebotRoute: RouteProtocol {
     
     public struct VerlassenRequest: RequestProtocol {
         public typealias RequestBody = VerlassenRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "verlassen"
         
@@ -151,7 +147,6 @@ public class AngebotRoute: RouteProtocol {
     
     public struct BeendenRequest: RequestProtocol {
         public typealias RequestBody = BeendenRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "beenden"
         
@@ -166,18 +161,8 @@ public class AngebotRoute: RouteProtocol {
         public init() {}
     }
     
-    public struct GetAllRequest: RequestProtocol {
-        public typealias RequestBody = Empty
-        public typealias ResponseBody = [Angebot]
-        public let method = HTTPMethod.get
-        public let path = "getAll"
-        
-        public init() {}
-    }
-    
     public struct CheckOutPersonRequest: RequestProtocol {
         public typealias RequestBody = CheckOutPersonRequestBody
-        public typealias ResponseBody = HTTPStatus
         public let method = HTTPMethod.post
         public let path = "checkOutPerson"
 
@@ -188,33 +173,6 @@ public class AngebotRoute: RouteProtocol {
             public init(personID: UUID, angebotID: UUID) {
                 self.personID = personID
                 self.angebotID = angebotID
-            }
-        }
-        
-        public init() {}
-    }
-    
-    public struct GetVisitedPersonsRequest: RequestProtocol {
-        public typealias RequestBody = GetVisitedPersonsRequestBody
-        public typealias ResponseBody = GetVisitedPersonsResponseBody
-        public let method = HTTPMethod.post
-        public let path = "getVisitedPersons"
-        
-        public struct GetVisitedPersonsRequestBody: Codable {
-            public let angebotID: UUID
-            
-            public init(angebotID: UUID) {
-                self.angebotID = angebotID
-            }
-        }
-
-        public struct GetVisitedPersonsResponseBody: Codable {
-            public let visited: [Person]
-            public let notVisited: [Person]
-            
-            public init(visited: [Person], notVisited: [Person]) {
-                self.visited = visited
-                self.notVisited = notVisited
             }
         }
         

@@ -56,8 +56,8 @@ public struct Angebot: Identifiable, Codable {
 
 
 public struct AngebotAuswertung: Codable {
-    var visitedPersonen: [Person]
-    var notVisitedPersonen: [Person]
+    public var visitedPersonen: [Person]
+    public var notVisitedPersonen: [Person]
     
     public init(visitedPersonen: [Person], notVisitedPersonen: [Person]) {
         self.visitedPersonen = visitedPersonen

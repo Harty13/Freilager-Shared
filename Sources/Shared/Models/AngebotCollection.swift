@@ -9,13 +9,13 @@ import Foundation
 
 public struct AngebotCollection: Identifiable, Codable {
     public var id: UUID?
-    public var angeboteIDS: [UUID]
+    public var angeboteIDs: [UUID]
     
     public init(
         id: UUID? = nil,
-        angeboteIDS: [UUID]
+        angeboteIDs: [UUID]
     ) {
         self.id = id
-        self.angeboteIDS = angeboteIDS
+        self.angeboteIDs = angeboteIDs
     }
 }

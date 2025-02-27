@@ -191,10 +191,10 @@ public class AngebotRoute: RouteProtocol {
         public let path = "createAngebotCollection"
 
         public struct CreateAngebotCollectionRequestBody: Codable {
-            public let angebote: [Angebot]
+            public let angeboteIDS: [UUID]
             
-            public init(angebote: [Angebot]) {
-                self.angebote = angebote
+            public init(angeboteIDS: [UUID]) {
+                self.angeboteIDS = angeboteIDS
             }
         }
         

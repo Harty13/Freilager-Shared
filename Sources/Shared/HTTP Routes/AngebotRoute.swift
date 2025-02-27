@@ -184,6 +184,40 @@ public class AngebotRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct CreateAngebotCollectionRequest: RequestProtocol {
+        public typealias RequestBody = CreateAngebotCollectionRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "createAngebotCollection"
+
+        public struct CreateAngebotCollectionRequestBody: Codable {
+            public let angebote: [Angebot]
+            
+            public init(angebote: [Angebot]) {
+                self.angebote = angebote
+            }
+        }
+        
+        public init() {}
+    }
+    
+    public struct DeleteAngebotCollectionRequest: RequestProtocol {
+        public typealias RequestBody = DeleteAngebotCollectionRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "deleteAngebotCollection"
+
+        public struct DeleteAngebotCollectionRequestBody: Codable {
+            public let id: UUID
+            
+            public init(id: UUID) {
+                self.id = id
+            }
+        }
+        
+        public init() {}
+    }
+    
     public struct AngebotCollectionStartenRequest: RequestProtocol {
         public typealias RequestBody = AngebotCollectionStartenRequestBody
 
@@ -205,7 +239,7 @@ public class AngebotRoute: RouteProtocol {
         public typealias RequestBody = AngebotCollectionBeendenRequestBody
 
         public let method = HTTPMethod.post
-        public let path = "startAngebotCollection"
+        public let path = "endAngebotCollection"
 
         public struct AngebotCollectionBeendenRequestBody: Codable {
             public let collectionID: UUID

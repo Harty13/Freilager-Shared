@@ -183,4 +183,38 @@ public class AngebotRoute: RouteProtocol {
         
         public init() {}
     }
+    
+    public struct AngebotCollectionStartenRequest: RequestProtocol {
+        public typealias RequestBody = AngebotCollectionStartenRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "startAngebotCollection"
+
+        public struct AngebotCollectionStartenRequestBody: Codable {
+            public let collectionID: UUID
+            
+            public init(collectionID: UUID) {
+                self.collectionID = collectionID
+            }
+        }
+        
+        public init() {}
+    }
+    
+    public struct AngebotCollectionBeendenRequest: RequestProtocol {
+        public typealias RequestBody = AngebotCollectionBeendenRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "startAngebotCollection"
+
+        public struct AngebotCollectionBeendenRequestBody: Codable {
+            public let collectionID: UUID
+            
+            public init(collectionID: UUID) {
+                self.collectionID = collectionID
+            }
+        }
+        
+        public init() {}
+    }
 }

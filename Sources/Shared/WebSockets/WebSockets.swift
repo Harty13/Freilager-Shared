@@ -11,8 +11,8 @@ public enum SubscriptionType: Codable, Hashable {
     case device(uniqueIdentifier: UUID)
     case angebote
     case angebotDetails(angebotID: UUID)
-    case angeboteCollections
-    case angeboteCollectionDetails(collectionID: UUID)
+    case angebotCollections
+    case angebotCollectionDetails(collectionID: UUID)
     case personen
     case personDetails(personID: UUID)
     case geräte
@@ -25,9 +25,9 @@ public enum SubscriptionType: Codable, Hashable {
             return [Angebot].self
         case .angebotDetails(let angebotID):
             return Angebot?.self
-        case .angeboteCollections:
+        case .angebotCollections:
             return [AngebotCollection].self
-        case .angeboteCollectionDetails(let collectionID):
+        case .angebotCollectionDetails(let collectionID):
             return AngebotCollection?.self
         case .personen:
             return [Person].self

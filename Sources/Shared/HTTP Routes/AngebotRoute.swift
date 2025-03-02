@@ -194,7 +194,7 @@ public class AngebotRoute: RouteProtocol {
             public let angeboteIDs: [UUID]
             
             public init(angeboteIDs: [UUID]) {
-                self.angeboteIDs = angeboteIDS
+                self.angeboteIDs = angeboteIDs
             }
         }
         

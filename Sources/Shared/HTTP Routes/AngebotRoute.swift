@@ -194,7 +194,7 @@ public class AngebotRoute: RouteProtocol {
             public let angeboteIDs: [UUID]
             
             public init(angeboteIDs: [UUID]) {
-                self.angeboteIDs = angeboteIDs
+                self.angeboteIDs = angeboteIDS
             }
         }
         
@@ -225,9 +225,11 @@ public class AngebotRoute: RouteProtocol {
         public let path = "startAngebotCollection"
 
         public struct AngebotCollectionStartenRequestBody: Codable {
+            public let deviceID: UUID
             public let collectionID: UUID
             
-            public init(collectionID: UUID) {
+            public init(deviceID: UUID, collectionID: UUID) {
+                self.deviceID = deviceID
                 self.collectionID = collectionID
             }
         }

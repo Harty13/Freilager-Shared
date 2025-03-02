@@ -14,6 +14,7 @@ public struct Device: Identifiable, Codable {
     public var deviceModus: DeviceModus
     public var owner: Person?
     public var currentAngebot: Angebot?
+    public var currentAngebotCollection: AngebotCollection?
     public var deviceStatus: DeviceStatus
     public var kommentar: String?
     public var createdAt: Date?

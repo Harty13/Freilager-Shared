@@ -26,6 +26,7 @@ public struct Device: Identifiable, Codable {
         deviceModus: DeviceModus,
         owner: Person? = nil,
         currentAngebot: Angebot? = nil,
+        currentAngebotCollection: AngebotCollection? = nil,
         deviceStatus: DeviceStatus,
         kommentar: String? = nil,
         createdAt: Date? = nil
@@ -36,6 +37,7 @@ public struct Device: Identifiable, Codable {
         self.deviceModus = deviceModus
         self.owner = owner
         self.currentAngebot = currentAngebot
+        self.currentAngebotCollection = currentAngebotCollection
         self.deviceStatus = deviceStatus
         self.kommentar = kommentar
         self.createdAt = createdAt

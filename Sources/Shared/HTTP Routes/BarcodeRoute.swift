@@ -21,10 +21,18 @@ public class BarcodeRoute: RouteProtocol {
         public struct ScannedRequestBody: Codable {
             public let barcodeNummer: String
             public let angebot: Angebot?
+            public let angebotCollection: AngebotCollection?
             
             public init(barcodeNummer: String, angebot: Angebot?) {
                 self.barcodeNummer = barcodeNummer
                 self.angebot = angebot
+                self.angebotCollection = nil
+            }
+            
+            public init(barcodeNummer: String, angebotCollection: AngebotCollection?) {
+                self.barcodeNummer = barcodeNummer
+                self.angebot = nil
+                self.angebotCollection = angebotCollection
             }
         }
         
@@ -39,6 +47,7 @@ public class BarcodeRoute: RouteProtocol {
             
             public enum Action: Codable, Equatable {
                 case login
+                case showAngebotCollectionOptions
                 case checkIn
                 case checkOut
                 case alreadyCheckedIn(at: Angebot)

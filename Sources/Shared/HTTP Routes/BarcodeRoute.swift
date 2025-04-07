@@ -55,7 +55,7 @@ public class BarcodeRoute: RouteProtocol {
                 
                 public static func ==(lhs: Action, rhs: Action) -> Bool {
                     switch (lhs, rhs) {
-                    case (.login, .login), (.checkIn, .checkIn), (.checkOut, .checkOut):
+                    case (.login, .login), (.checkIn, .checkIn), (.checkOut, .checkOut), (.showAngebotCollectionOptions, .showAngebotCollectionOptions), (.angebotIsFull, .angebotIsFull):
                         return true
                     case (let .alreadyCheckedIn(lAngebot), let .alreadyCheckedIn(rAngebot)):
                         return lAngebot.id == rAngebot.id

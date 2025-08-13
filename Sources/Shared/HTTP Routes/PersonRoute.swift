@@ -128,10 +128,20 @@ public class PersonRoute: RouteProtocol {
     
 
     public struct UploadWochenListeRequest: RequestProtocol {
-        public typealias RequestBody = Data
+        public typealias RequestBody = UploadWochenListeRequestBody
 
         public let method = HTTPMethod.post
         public let path = "uploadWochenliste"
+        
+        public struct UploadWochenListeRequestBody: Codable {
+            public let data: Data
+            public let filetype: String
+            
+            public init(data: Data, filetype: String) {
+                self.data = data
+                self.filetype = filetype
+            }
+        }
         
         public init() {}
         

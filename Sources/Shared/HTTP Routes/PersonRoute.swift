@@ -71,8 +71,8 @@ public class PersonRoute: RouteProtocol {
         public let path = "createFromList"
         
         public struct CreateFromListRequestBody: Codable {
-            var personlist: [CreatePersonRequestBody]
-            var deletePersonenNotInList: Bool
+            public let personList: [CreatePersonRequestBody]
+            public let deletePersonenNotInList: Bool
         }
 
         public init() {}

@@ -65,10 +65,15 @@ public class PersonRoute: RouteProtocol {
     }
     
     public struct CreateFromListRequest: RequestProtocol {
-        public typealias RequestBody = [CreatePersonRequestBody]
+        public typealias RequestBody = CreateFromListRequestBody
 
         public let method = HTTPMethod.post
         public let path = "createFromList"
+        
+        public struct CreateFromListRequestBody: Codable {
+            var personlist: [CreatePersonRequestBody]
+            var deletePersonenNotInList: Bool
+        }
 
         public init() {}
     }

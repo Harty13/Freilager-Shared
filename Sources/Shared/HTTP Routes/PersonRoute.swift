@@ -73,6 +73,16 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
     
+    public struct FileToPersonListRequest: RequestProtocol {
+        public typealias RequestBody = UploadListeBody
+        public typealias ResponseBody = [Person]
+
+        public let method = HTTPMethod.post
+        public let path = "fileToPersonList"
+        
+        public init() {}
+    }
+    
     public struct UpdateRequest: RequestProtocol {
         public typealias RequestBody = UpdateRequestBody
 
@@ -128,22 +138,24 @@ public class PersonRoute: RouteProtocol {
     
 
     public struct UploadWochenListeRequest: RequestProtocol {
-        public typealias RequestBody = UploadWochenListeRequestBody
+        public typealias RequestBody = UploadListeBody
 
         public let method = HTTPMethod.post
         public let path = "uploadWochenliste"
         
-        public struct UploadWochenListeRequestBody: Codable {
-            public let data: Data
-            public let filetype: String
-            
-            public init(data: Data, filetype: String) {
-                self.data = data
-                self.filetype = filetype
-            }
-        }
-        
         public init() {}
         
     }
+    
+    public struct UploadListeBody: Codable {
+        public let data: Data
+        public let filetype: String
+        
+        public init(data: Data, filetype: String) {
+            self.data = data
+            self.filetype = filetype
+        }
+    }
+
 }
+

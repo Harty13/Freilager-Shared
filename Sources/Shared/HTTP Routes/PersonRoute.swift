@@ -73,6 +73,11 @@ public class PersonRoute: RouteProtocol {
         public struct CreateFromListRequestBody: Codable {
             public let personList: [CreatePersonRequestBody]
             public let deletePersonenNotInList: Bool
+            
+            public init(personList: [CreatePersonRequestBody], deletePersonenNotInList: Bool) {
+                self.personList = personList
+                self.deletePersonenNotInList = deletePersonenNotInList
+            }
         }
 
         public init() {}

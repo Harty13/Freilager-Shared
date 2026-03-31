@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AngebotCollection: Identifiable, Codable {
+public struct AngebotCollection: Identifiable, Codable, Sendable {
     public var id: UUID?
     public var angeboteIDs: [UUID]
     

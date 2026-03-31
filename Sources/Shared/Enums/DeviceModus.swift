@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DeviceModus: String, Codable {
+public enum DeviceModus: String, Codable, Sendable {
     case info = "info"
     case angebot = "angebot"
     case person = "person"

@@ -19,15 +19,15 @@ public enum SubscriptionType: Codable, Hashable {
     
     var dataType: Codable.Type {
         switch self {
-        case .device(let uniqueIdentifier):
+        case .device:
             return Device?.self
         case .angebote:
             return [Angebot].self
-        case .angebotDetails(let angebotID):
+        case .angebotDetails:
             return Angebot?.self
         case .angebotCollections:
             return [AngebotCollection].self
-        case .angebotCollectionDetails(let collectionID):
+        case .angebotCollectionDetails:
             return AngebotCollection?.self
         case .personen:
             return [Person].self

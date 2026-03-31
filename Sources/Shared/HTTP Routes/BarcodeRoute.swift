@@ -45,17 +45,23 @@ public class BarcodeRoute: RouteProtocol {
                 self.action = action
             }
             
-            public enum Action: Codable, Equatable {
+            public enum Action: Codable, Equatable, Sendable {
                 case login
                 case showAngebotCollectionOptions
                 case checkIn
                 case checkOut
                 case alreadyCheckedIn(at: Angebot)
                 case angebotIsFull
+                case notRegisteredToday
                 
                 public static func ==(lhs: Action, rhs: Action) -> Bool {
                     switch (lhs, rhs) {
-                    case (.login, .login), (.checkIn, .checkIn), (.checkOut, .checkOut), (.showAngebotCollectionOptions, .showAngebotCollectionOptions), (.angebotIsFull, .angebotIsFull):
+                    case (.login, .login),
+                        (.checkIn, .checkIn),
+                        (.checkOut, .checkOut),
+                        (.showAngebotCollectionOptions, .showAngebotCollectionOptions),
+                        (.angebotIsFull, .angebotIsFull),
+                        (.notRegisteredToday, .notRegisteredToday):
                         return true
                     case (let .alreadyCheckedIn(lAngebot), let .alreadyCheckedIn(rAngebot)):
                         return lAngebot.id == rAngebot.id

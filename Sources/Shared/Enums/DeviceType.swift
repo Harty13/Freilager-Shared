@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum DeviceType: String, Codable {
+public enum DeviceType: String, Codable, Sendable {
     case iPhone = "iPhone"
     case iPad = "iPad"
 }

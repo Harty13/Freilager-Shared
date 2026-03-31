@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Person: Identifiable, Codable {
+public struct Person: Identifiable, Codable, Sendable {
     public var id: UUID?
     public var barcodeNummer: String?
     public var vorname: String?
@@ -47,7 +47,7 @@ public struct Person: Identifiable, Codable {
     }
 }
 
-public struct LastAngebot: Codable {
+public struct LastAngebot: Codable, Sendable {
     public var angebot: Angebot
     public var checkInTime: Date?
     public var checkOutTime: Date?

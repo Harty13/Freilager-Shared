@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Device: Identifiable, Codable {
+public struct Device: Identifiable, Codable, Sendable {
     public var id: UUID?
     public var uniqueIdentifier: UUID?
     public var deviceType: DeviceType?

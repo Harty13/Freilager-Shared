@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Rolle: Codable {
+public enum Rolle: Codable, Sendable {
     case master
     case admin
     case betreuung

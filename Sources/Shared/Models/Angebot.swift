@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Angebot: Identifiable, Codable {
+public struct Angebot: Identifiable, Codable, Sendable {
     public var id: UUID?
     public var titel: String?
     public var emoji: String?
@@ -55,7 +55,7 @@ public struct Angebot: Identifiable, Codable {
 }
 
 
-public struct AngebotAuswertung: Codable {
+public struct AngebotAuswertung: Codable, Sendable {
     public var visitedPersonen: [Person]
     public var notVisitedPersonen: [Person]
     

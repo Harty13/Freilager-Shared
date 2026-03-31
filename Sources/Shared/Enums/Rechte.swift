@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum Rechte: Codable {
+public enum Rechte: Codable, Sendable {
     case angebotBearbeiten
     case angebotÜbernehmen
     case kindKrankmelden

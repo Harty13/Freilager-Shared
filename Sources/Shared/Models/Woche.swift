@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Woche: Codable {
+public struct Woche: Codable, Sendable {
     public var montag: Tag
     public var dienstag: Tag
     public var mittwoch: Tag
@@ -23,7 +23,7 @@ public struct Woche: Codable {
     }
 }
 
-public struct Tag: Codable {
+public struct Tag: Codable, Sendable {
     public var morgentisch: AnmeldeStatus
     public var mittagstisch: AnmeldeStatus
     public var nachmittagsbetreuung1: AnmeldeStatus
@@ -37,7 +37,7 @@ public struct Tag: Codable {
     }
 }
 
-public enum AnmeldeStatus: String, Codable {
+public enum AnmeldeStatus: String, Codable, Sendable {
     case regulärAngemeldet
     case ausnahmsweiseAngemeldet
     case abgemeldet

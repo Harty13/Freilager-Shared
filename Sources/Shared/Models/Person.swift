@@ -18,6 +18,7 @@ public struct Person: Identifiable, Codable, Sendable {
     public var rolle: Rolle?
     public var rechte: [Rechte]?
     public var woche: Woche?
+    public var krankmeldungWoche: KrankmeldungWoche?
     public var lastAngebot: LastAngebot?
     
     public init(
@@ -31,6 +32,7 @@ public struct Person: Identifiable, Codable, Sendable {
         rolle: Rolle? = nil,
         rechte: [Rechte]? = nil,
         woche: Woche? = nil,
+        krankmeldungWoche: KrankmeldungWoche? = nil,
         lastAngebot: LastAngebot? = nil
     ) {
         self.id = id
@@ -43,6 +45,7 @@ public struct Person: Identifiable, Codable, Sendable {
         self.rolle = rolle
         self.rechte = rechte
         self.woche = woche
+        self.krankmeldungWoche = krankmeldungWoche
         self.lastAngebot = lastAngebot
     }
 }

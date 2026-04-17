@@ -26,6 +26,7 @@ public class AngebotRoute: RouteProtocol {
             public let maxPersonenAnzahl: Int
             public let checkOutRequired: Bool
             public let hasAuswertung: Bool
+            public let offenAb: Date?
             
             public init(
                 titel: String,
@@ -34,7 +35,8 @@ public class AngebotRoute: RouteProtocol {
                 hasMaxPersonenAnzahl: Bool,
                 maxPersonenAnzahl: Int,
                 checkOutRequired: Bool,
-                hasAuswertung: Bool
+                hasAuswertung: Bool,
+                offenAb: Date? = nil
             ) {
                 self.titel = titel
                 self.emoji = emoji
@@ -43,6 +45,7 @@ public class AngebotRoute: RouteProtocol {
                 self.maxPersonenAnzahl = maxPersonenAnzahl
                 self.checkOutRequired = checkOutRequired
                 self.hasAuswertung = hasAuswertung
+                self.offenAb = offenAb
             }
         }
         
@@ -64,6 +67,7 @@ public class AngebotRoute: RouteProtocol {
             public let maxPersonenAnzahl: Int?
             public let checkOutRequired: Bool?
             public let hasAuswertung: Bool?
+            public let offenAb: Date?
             
             
             public init(
@@ -74,7 +78,8 @@ public class AngebotRoute: RouteProtocol {
                 hasMaxPersonenAnzahl: Bool? = nil,
                 maxPersonenAnzahl: Int? = nil,
                 checkOutRequired: Bool? = nil,
-                hasAuswertung: Bool? = nil
+                hasAuswertung: Bool? = nil,
+                offenAb: Date? = nil
             ) {
                 self.id = id
                 self.titel = titel
@@ -84,6 +89,7 @@ public class AngebotRoute: RouteProtocol {
                 self.maxPersonenAnzahl = maxPersonenAnzahl
                 self.checkOutRequired = checkOutRequired
                 self.hasAuswertung = hasAuswertung
+                self.offenAb = offenAb
             }
         }
         
@@ -192,9 +198,11 @@ public class AngebotRoute: RouteProtocol {
 
         public struct CreateAngebotCollectionRequestBody: Codable {
             public let angeboteIDs: [UUID]
+            public let offenAbZeiten: [AngebotZeit]?
             
-            public init(angeboteIDs: [UUID]) {
+            public init(angeboteIDs: [UUID], offenAbZeiten: [AngebotZeit]? = nil) {
                 self.angeboteIDs = angeboteIDs
+                self.offenAbZeiten = offenAbZeiten
             }
         }
         

@@ -14,6 +14,9 @@ public struct Angebot: Identifiable, Codable, Sendable {
     public var beschreibung: String?
     public var betreuungsPersonen: [Person]?
     
+    /// If set, children can only check in starting at this time.
+    public var offenAb: Date?
+    
     public var personen: [Person]?
     public var personenAnzahl: Int?
     
@@ -31,6 +34,7 @@ public struct Angebot: Identifiable, Codable, Sendable {
         emoji: String? = nil,
         beschreibung: String? = nil,
         betreuungsPersonen: [Person]? = nil,
+        offenAb: Date? = nil,
         personen: [Person]? = nil,
         personenAnzahl: Int? = nil,
         hasMaxPersonenAnzahl: Bool? = nil,
@@ -44,6 +48,7 @@ public struct Angebot: Identifiable, Codable, Sendable {
         self.emoji = emoji
         self.beschreibung = beschreibung
         self.betreuungsPersonen = betreuungsPersonen
+        self.offenAb = offenAb
         self.personen = personen
         self.personenAnzahl = personenAnzahl
         self.hasMaxPersonenAnzahl = hasMaxPersonenAnzahl

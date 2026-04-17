@@ -53,6 +53,7 @@ public class BarcodeRoute: RouteProtocol {
                 case alreadyCheckedIn(at: Angebot)
                 case angebotIsFull
                 case notRegisteredToday
+                case nochNichtOffen(ab: Date)
                 
                 public static func ==(lhs: Action, rhs: Action) -> Bool {
                     switch (lhs, rhs) {
@@ -65,6 +66,8 @@ public class BarcodeRoute: RouteProtocol {
                         return true
                     case (let .alreadyCheckedIn(lAngebot), let .alreadyCheckedIn(rAngebot)):
                         return lAngebot.id == rAngebot.id
+                    case (let .nochNichtOffen(lDate), let .nochNichtOffen(rDate)):
+                        return lDate == rDate
                     default:
                         return false
                     }

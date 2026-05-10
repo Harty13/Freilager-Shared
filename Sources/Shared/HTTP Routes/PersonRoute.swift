@@ -165,6 +165,24 @@ public class PersonRoute: RouteProtocol {
         public init() {}
     }
 
+    public struct SetBulkKrankmeldungRequest: RequestProtocol {
+        public typealias RequestBody = SetBulkKrankmeldungRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "setBulkKrankmeldung"
+
+        public struct SetBulkKrankmeldungRequestBody: Codable {
+            public let personIDs: [UUID]
+            public let tage: [Wochentag]
+
+            public init(personIDs: [UUID], tage: [Wochentag]) {
+                self.personIDs = personIDs
+                self.tage = tage
+            }
+        }
+
+        public init() {}
+    }
 
     public struct UploadWochenListeRequest: RequestProtocol {
         public typealias RequestBody = UploadListeBody

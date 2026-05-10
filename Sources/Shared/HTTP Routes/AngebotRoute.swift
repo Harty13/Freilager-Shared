@@ -261,4 +261,25 @@ public class AngebotRoute: RouteProtocol {
         
         public init() {}
     }
+    
+    public struct UpdateAngebotCollectionRequest: RequestProtocol {
+        public typealias RequestBody = UpdateAngebotCollectionRequestBody
+
+        public let method = HTTPMethod.post
+        public let path = "updateAngebotCollection"
+
+        public struct UpdateAngebotCollectionRequestBody: Codable {
+            public let id: UUID
+            public let angeboteIDs: [UUID]
+            public let offenAbZeiten: [AngebotZeit]?
+
+            public init(id: UUID, angeboteIDs: [UUID], offenAbZeiten: [AngebotZeit]? = nil) {
+                self.id = id
+                self.angeboteIDs = angeboteIDs
+                self.offenAbZeiten = offenAbZeiten
+            }
+        }
+
+        public init() {}
+    }
 }

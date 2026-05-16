@@ -22,17 +22,20 @@ public class BarcodeRoute: RouteProtocol {
             public let barcodeNummer: String
             public let angebot: Angebot?
             public let angebotCollection: AngebotCollection?
+            public let forceCheckIn: Bool?
             
-            public init(barcodeNummer: String, angebot: Angebot?) {
+            public init(barcodeNummer: String, angebot: Angebot?, forceCheckIn: Bool = false) {
                 self.barcodeNummer = barcodeNummer
                 self.angebot = angebot
                 self.angebotCollection = nil
+                self.forceCheckIn = forceCheckIn
             }
             
             public init(barcodeNummer: String, angebotCollection: AngebotCollection?) {
                 self.barcodeNummer = barcodeNummer
                 self.angebot = nil
                 self.angebotCollection = angebotCollection
+                self.forceCheckIn = false
             }
         }
         

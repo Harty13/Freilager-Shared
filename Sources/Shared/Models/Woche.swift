@@ -55,6 +55,7 @@ public struct Tag: Codable, Sendable {
 public enum AnmeldeStatus: String, Codable, Sendable {
     case regulärAngemeldet
     case ausnahmsweiseAngemeldet
+    case spontanAngemeldet
     case abgemeldet
 }
 
@@ -67,16 +68,21 @@ public enum Wochentag: Int, Codable, CaseIterable, Sendable {
 
     public var titel: String {
         switch self {
-        case .montag:
-            "Montag"
-        case .dienstag:
-            "Dienstag"
-        case .mittwoch:
-            "Mittwoch"
-        case .donnerstag:
-            "Donnerstag"
-        case .freitag:
-            "Freitag"
+        case .montag:     "Montag"
+        case .dienstag:   "Dienstag"
+        case .mittwoch:   "Mittwoch"
+        case .donnerstag: "Donnerstag"
+        case .freitag:    "Freitag"
+        }
+    }
+
+    public var kurzTitel: String {
+        switch self {
+        case .montag:     "Mo"
+        case .dienstag:   "Di"
+        case .mittwoch:   "Mi"
+        case .donnerstag: "Do"
+        case .freitag:    "Fr"
         }
     }
 
